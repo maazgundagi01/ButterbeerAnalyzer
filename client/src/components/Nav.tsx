@@ -1,8 +1,7 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Dropdown from './Dropdown'
-import logo2 from '../assets/qqlogo-full-light.png'
-import { Link, NavLink } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import logo1 from '../assets/qqlogo1.png'
 
 const user = {

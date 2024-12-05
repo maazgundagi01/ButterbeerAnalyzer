@@ -40,18 +40,8 @@ const getComments = async (videoId:string) =>{
       })
    }
 
-// app.get('/', async(req:any , res:any)=>{
-//    const vidId:string = '5mEwh4MfwB4'
-//    getComments(vidId)
-//    .then(comments => {
-//       res.json(comments)
-//    })
-//    .catch(err => {
-//       res.status(500).json({ error: 'Failed to fetch comments' }); 
-//    })
-// })
 app.get('/comments', async(req:any , res:any)=>{
-   const vidId = req.query.videoId as string;
+   const vidId = extractVideoId(req.query.videoId as string)
    if(!vidId){
       return res.status(400).json({error: 'Video ID is required'})
    }

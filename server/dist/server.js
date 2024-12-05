@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const sentiment_1 = __importDefault(require("sentiment"));
+const services_1 = require("./services/services");
 //Initializations, etc.
 const app = (0, express_1.default)();
 const sentiment = new sentiment_1.default;
@@ -56,7 +57,7 @@ const getComments = (videoId) => __awaiter(void 0, void 0, void 0, function* () 
 //    })
 // })
 app.get('/comments', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const vidId = req.query.videoId;
+    const vidId = (0, services_1.extractVideoId)(req.query.videoId);
     if (!vidId) {
         return res.status(400).json({ error: 'Video ID is required' });
     }

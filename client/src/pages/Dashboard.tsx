@@ -65,7 +65,7 @@ const server = import.meta.env.VITE_SERVER;
   return (
     
     <>
-      <TitleBar title="Dashboard " />
+      <TitleBar title="Analyze " />
       <main className="h-screen"> {/* Set main to full viewport height */}
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 h-full">
           {/* Top Section */}

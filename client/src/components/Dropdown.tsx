@@ -2,11 +2,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 
 
-const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
-  ]
+const userNavigation=[
+  { name: 'Home', href:'/'},
+  { name: 'Analyze', href:'/dashboard'}
+]
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',

@@ -13,9 +13,8 @@ export default function Dashboard() {
     setVideoId(event.target.value);
  };
 
-const server = import.meta.env.VITE_SERVER;
   const fetchComments = () => {
-    axios.get(`${server}/comments?videoId=${videoId}`)
+    axios.get(`https://173.255.206.46:8001/comments?videoId=${videoId}`)
       .then((response) => setComments(response.data))
       .catch((error) => console.error("Error fetching comments:", error));
   };
@@ -65,7 +64,6 @@ const server = import.meta.env.VITE_SERVER;
   return (
     
     <>
-      <TitleBar title="Analyze " />
       <main className="h-screen"> {/* Set main to full viewport height */}
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 h-full">
           {/* Top Section */}

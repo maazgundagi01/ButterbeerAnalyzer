@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import TitleBar from "../components/TitleBar";
 import video1 from "../assets/1115063_Broadcast_Man_1280x720.mp4"
 import axios from 'axios';
 import { useState } from 'react';

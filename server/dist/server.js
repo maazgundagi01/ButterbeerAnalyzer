@@ -46,16 +46,6 @@ const getComments = (videoId) => __awaiter(void 0, void 0, void 0, function* () 
         throw err;
     });
 });
-// app.get('/', async(req:any , res:any)=>{
-//    const vidId:string = '5mEwh4MfwB4'
-//    getComments(vidId)
-//    .then(comments => {
-//       res.json(comments)
-//    })
-//    .catch(err => {
-//       res.status(500).json({ error: 'Failed to fetch comments' }); 
-//    })
-// })
 app.get('/comments', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const vidId = (0, services_1.extractVideoId)(req.query.videoId);
     if (!vidId) {

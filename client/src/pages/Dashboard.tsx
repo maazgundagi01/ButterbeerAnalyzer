@@ -13,8 +13,9 @@ export default function Dashboard() {
     setVideoId(event.target.value);
  };
 
+const server = import.meta.env.VITE_SERVER;
   const fetchComments = () => {
-    axios.get(`http://localhost:8001/comments?videoId=${videoId}`)
+    axios.get(`${server}/comments?videoId=${videoId}`)
       .then((response) => setComments(response.data))
       .catch((error) => console.error("Error fetching comments:", error));
   };
@@ -43,12 +44,12 @@ export default function Dashboard() {
   }
   function commentDisplay(){
     if(comments){return comments.map((comment: any, index: number) => (
-      <div key={index} className="p-2 border-b border-gray-200">
+      <div key={index} className="p-2 my-2 rounded-md bg-gray-900 border-gray-600">
         <p className={`text-xl ${getSentimentColor(comment.sentimentScore)}`}>
           Sentiment Score:<strong>{comment.sentimentScore}</strong>
         </p>
-        <p><strong>User:</strong> {comment.snippet.topLevelComment.snippet.authorDisplayName}</p>
-        <p><strong>Comment:</strong> {comment.snippet.topLevelComment.snippet.textDisplay}</p>
+        <p className='text-gray-300'><strong>User:</strong> {comment.snippet.topLevelComment.snippet.authorDisplayName}</p>
+        <p className='text-white'><strong>Comment:</strong> {comment.snippet.topLevelComment.snippet.textDisplay}</p>
       </div>
     ))}else{
       return 'Search something'
@@ -65,7 +66,7 @@ export default function Dashboard() {
     
     <>
       <TitleBar title="Dashboard " />
-      <main className="h-screen bg-gray-900"> {/* Set main to full viewport height */}
+      <main className="h-screen"> {/* Set main to full viewport height */}
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 h-full">
           {/* Top Section */}
           <section className="relative flex flex-col items-center justify-center h-1/2 mb-0 rounded-lg overflow-hidden"> {/* Set height to 50% and remove bottom margin */}
@@ -79,18 +80,18 @@ export default function Dashboard() {
               Your browser does not support the video tag.
             </video>
             {/* Overlay */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20"></div> {/* Adjust opacity as needed */}
+            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div> {/* Adjust opacity as needed */}
             <div className="relative z-10 text-center "> {/* Ensure text is above the video and overlay */}
-              <h1 className="mx-2 rounded-md text-5xl p-2 bg-gray-900/60 text-white font-bold text-shadow">Sentiment Analysis for YouTube Videos</h1>
-              <h2 className="text-white rounded-sm mb-6 w-fit m-auto p-2 bg-gray-900/60 text-xl font-medium mt-4 text-shadow">Video comment section might be full of fans or trolls, but as long as it's full it has data!</h2>
-             
-              <input onChange={handleInputChange}
+              <h1 className="mx-2 rounded-sm text-4xl p-2  text-white font-bold text-shadow">ButterBeer Analyzer - Youtube Comments</h1>
+              <h2 className="text-white rounded-sm mb-3 w-fit m-auto p-2 bg-slate-900/20 text-xl font-medium mt-3 text-shadow">Video comment section might be full of fans or trolls, but as long as it's full it has data!</h2>
+              <label htmlFor="name-search" className='text-white  bg-slate-900/40 px-2 py-1 rounded-sm'>Enter URL</label><br/>
+              <input name="name-search mt-2" onChange={handleInputChange}
                 type="text"
                 placeholder="Enter YouTube Video URL"
                 className="border border-gray-300 rounded-lg p-2 mb-4 w-full max-w-md"
               />
               <div className="flex justify-center"> {/* Center the button */}
-                <button onClick={fetchComments} className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg mt-2">
+                <button onClick={fetchComments} className="bg-indigo-500 text-white font-semibold py-2 px-4 rounded-lg">
                   Submit
                 </button>
               </div>
@@ -100,15 +101,15 @@ export default function Dashboard() {
           {/* Bottom Section */}
           <section className="flex flex-col md:flex-row mt-8 flex-grow space-y-4 md:space-y-0 md:space-x-4">
             {/* Comments Section (30% width) */}
-            <div className="bg-white shadow-lg rounded-lg p-4 md:w-1/3 flex-grow">
-              <h2 className="text-l font-semibold mb-2">Analyze</h2>
-              <h1 className="text-xl font-bold">Average Score: {score}</h1>
+            <div className=" shadow-lg border-r border-gray-700 p-4 md:w-1/3 flex-grow">
+              <h2 className="text-l font-semibold mb-2 text-gray-300 w-fit rounded-md px-2 py1 bg-gray-900">Analyze</h2>
+              <h1 className="text-xl font-bold text-white">Average Score: {score}</h1>
               <div className="h-48 rounded-lg"></div> {/* Placeholder for comments */}
             </div>
 
             {/* Analysis Section (60% width) */}
-            <div className="bg-white shadow-lg rounded-lg p-4 md:w-2/3 flex-grow  overflow-scroll">
-              <h2 className="text-l font-semibold mb-2">Comments</h2>
+            <div className="shadow-lg rounded-lg p-4 md:w-2/3 flex-grow max-h-80 overflow-scroll overflow-y-scroll overflow-x-hidden ">
+              <h2 className="text-l text-gray-300 bg-gray-900 w-fit rounded-md px-2 py1 font-semibold mb-2">Comments</h2>
               {
                 commentDisplay()
               }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Home() {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-800 h-svh">
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"
@@ -30,20 +30,20 @@ export default function Home() {
           </div>
           <div className="text-center">
             <h1 className="text-balance text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-              Unlock the Data, QQ Analyzer
+              Sentiment Analysis Made Simple
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-              Uncover the Collective Voice in YouTube Comments with QQAnalyzer, the tool designed to reveal not just individual opinions but the broader sentiment that drives every conversation. 
+              Uncover the Collective Voice in YouTube Comments with BBAnalyzer, the tool designed to reveal not just individual opinions but the broader sentiment that drives every conversation. 
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <Link
+                to="/dashboard"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-100">
-                Learn more <span aria-hidden="true">→</span>
+              </Link>
+              <a href="https://github.com/maazgundagi01/ButterbeerAnalyzer.git" className="text-sm font-semibold leading-6 text-gray-100">
+                Git <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>

@@ -1,9 +1,8 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Dropdown from './Dropdown'
-import logo2 from '../assets/qqlogo-full-light.png'
-import { Link, NavLink } from 'react-router-dom'
-import logo1 from '../assets/qqlogo1.png'
+import { Link} from 'react-router-dom'
+import logo1 from '../assets/clinking-beer-mugs-svgrepo-com.svg'
 
 const user = {
   name: 'Tom Cook',
@@ -19,7 +18,7 @@ const user = {
 function Nav() {
   return (
     <nav id="main-navigation" className='z-50'>
-    <Disclosure as="nav" className="bg-gray-900">
+    <Disclosure as="nav" className="bg-black">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               <div className="flex items-center">

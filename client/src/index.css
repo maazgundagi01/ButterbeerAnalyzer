@@ -35,3 +35,11 @@ background: #555;
 button, .submit{
     cursor: pointer !important
 }
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+

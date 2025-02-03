@@ -96,23 +96,22 @@ export default function Dashboard() {
           </section>
 
           {/* Bottom Section */}
-          <section className="flex flex-col md:flex-row mt-8 flex-grow space-y-4 md:space-y-0 md:space-x-4">
-            {/* Comments Section (30% width) */}
-            <div className=" shadow-lg border-r border-gray-700 p-4 md:w-1/3 flex-grow">
-              <h2 className="text-l font-semibold mb-2 text-gray-300 w-fit rounded-md px-2 py1 bg-gray-900">Analyze</h2>
-              <h1 className="text-xl font-bold text-white">Average Score: {score}</h1>
-              <div className="h-48 rounded-lg"></div> {/* Placeholder for comments */}
-            </div>
+          <section className="flex flex-col-reverse md:flex-row mt-8 flex-grow space-y-4 md:space-y-0 md:space-x-4">
+  {/* Comments Section (30% width) */}
+  <div className="shadow-lg border-r border-gray-700 p-4 md:w-1/3 flex-grow">
+    <h2 className="text-l font-semibold mb-2 text-gray-300 w-fit rounded-md px-2 py-1 bg-gray-900">Analyze</h2>
+    <h1 className="text-xl font-bold text-white">Average Score: {score}</h1>
+    <div className="h-48 rounded-lg"></div> {/* Placeholder for comments */}
+  </div>
 
-            {/* Analysis Section (60% width) */}
-            <div className="shadow-lg rounded-lg p-4 md:w-2/3 flex-grow max-h-80 overflow-scroll overflow-y-scroll overflow-x-hidden ">
-              <h2 className="text-l text-gray-300 bg-gray-900 w-fit rounded-md px-2 py1 font-semibold mb-2">Comments</h2>
-              {
-                commentDisplay()
-              }
-            <div className="h-48 rounded-lg"></div> {/* Placeholder for analysis */}
-            </div>
-          </section>
+  {/* Analysis Section (60% width) */}
+  <div className="shadow-lg rounded-lg p-4 md:w-2/3 flex-grow max-h-80 overflow-scroll overflow-y-scroll overflow-x-hidden">
+    <h2 className="text-l text-gray-300 bg-gray-900 w-fit rounded-md px-2 py-1 font-semibold mb-2">Comments</h2>
+    {commentDisplay()}
+    <div className="h-48 rounded-lg"></div> {/* Placeholder for analysis */}
+  </div>
+</section>
+
         </div>
       </main>
     </>

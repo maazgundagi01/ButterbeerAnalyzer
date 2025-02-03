@@ -13,7 +13,7 @@ export default function Dashboard() {
  };
 
   const fetchComments = () => {
-    axios.get(`https://173.255.206.46:8001/comments?videoId=${videoId}`)
+    axios.get(`https://butterbeerbackend.onrender.com/comments?videoId=${videoId}`)
       .then((response) => setComments(response.data))
       .catch((error) => console.error("Error fetching comments:", error));
   };

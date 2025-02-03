@@ -23,7 +23,7 @@ export default function Home() {
             Decode the Buzz: YouTube Comment Analysis |{' '}
               <a href="#" className="font-semibold text-indigo-400">
                 <span aria-hidden="true" className="absolute inset-0" />
-                  <Link to="">Give it a try! </Link><span aria-hidden="true">&rarr;
+                  <Link to="/dashboard">Give it a try! </Link><span aria-hidden="true">&rarr;
                 </span>
               </a>
             </div>
